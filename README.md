@@ -1,0 +1,2 @@
+# `shaderc` bindings for Nim
+
