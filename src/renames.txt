@@ -1,0 +1,374 @@
+enum   :  enum_shaderc_source_language -> EnumSourceLanguage
+typedef:  shaderc_source_language -> SourceLanguage
+enum   :  enum_shaderc_shader_kind -> EnumShaderKind
+typedef:  shaderc_shader_kind -> ShaderKind
+enum   :  enum_shaderc_profile -> EnumProfile
+typedef:  shaderc_profile -> Profile
+enum   :  enum_shaderc_optimization_level -> EnumOptimizationLevel
+typedef:  shaderc_optimization_level -> OptimizationLevel
+enum   :  enum_shaderc_limit -> EnumLimit
+typedef:  shaderc_limit -> Limit
+enum   :  enum_shaderc_uniform_kind -> EnumUniformKind
+typedef:  shaderc_uniform_kind -> UniformKind
+typedef:  shaderc_compiler_t -> CompilerT
+proc   :  shaderc_compiler_initialize -> compilerInitialize
+proc   :  shaderc_compiler_release -> compilerRelease
+typedef:  shaderc_compile_options_t -> CompileOptionsT
+proc   :  shaderc_compile_options_initialize -> compileOptionsInitialize
+proc   :  shaderc_compile_options_clone -> compileOptionsClone
+proc   :  shaderc_compile_options_release -> compileOptionsRelease
+proc   :  shaderc_compile_options_add_macro_definition -> compileOptionsAddMacroDefinition
+proc   :  shaderc_compile_options_set_source_language -> compileOptionsSetSourceLanguage
+proc   :  shaderc_compile_options_set_generate_debug_info -> compileOptionsSetGenerateDebugInfo
+proc   :  shaderc_compile_options_set_optimization_level -> compileOptionsSetOptimizationLevel
+proc   :  shaderc_compile_options_set_forced_version_profile -> compileOptionsSetForcedVersionProfile
+struct :  struct_shaderc_include_result -> StructIncludeResult
+typedef:  shaderc_include_result -> IncludeResult
+enum   :  enum_shaderc_include_type -> EnumIncludeType
+typedef:  shaderc_include_resolve_fn -> IncludeResolveFn
+typedef:  shaderc_include_result_release_fn -> IncludeResultReleaseFn
+proc   :  shaderc_compile_options_set_include_callbacks -> compileOptionsSetIncludeCallbacks
+proc   :  shaderc_compile_options_set_suppress_warnings -> compileOptionsSetSuppressWarnings
+proc   :  shaderc_compile_options_set_target_env -> compileOptionsSetTargetEnv
+proc   :  shaderc_compile_options_set_target_spirv -> compileOptionsSetTargetSpirv
+proc   :  shaderc_compile_options_set_warnings_as_errors -> compileOptionsSetWarningsAsErrors
+proc   :  shaderc_compile_options_set_limit -> compileOptionsSetLimit
+proc   :  shaderc_compile_options_set_auto_bind_uniforms -> compileOptionsSetAutoBindUniforms
+proc   :  shaderc_compile_options_set_auto_combined_image_sampler -> compileOptionsSetAutoCombinedImageSampler
+proc   :  shaderc_compile_options_set_hlsl_io_mapping -> compileOptionsSetHlslIoMapping
+proc   :  shaderc_compile_options_set_hlsl_offsets -> compileOptionsSetHlslOffsets
+proc   :  shaderc_compile_options_set_binding_base -> compileOptionsSetBindingBase
+proc   :  shaderc_compile_options_set_binding_base_for_stage -> compileOptionsSetBindingBaseForStage
+proc   :  shaderc_compile_options_set_preserve_bindings -> compileOptionsSetPreserveBindings
+proc   :  shaderc_compile_options_set_auto_map_locations -> compileOptionsSetAutoMapLocations
+proc   :  shaderc_compile_options_set_hlsl_register_set_and_binding_for_stage -> compileOptionsSetHlslRegisterSetAndBindingForStage
+proc   :  shaderc_compile_options_set_hlsl_register_set_and_binding -> compileOptionsSetHlslRegisterSetAndBinding
+proc   :  shaderc_compile_options_set_hlsl_functionality1 -> compileOptionsSetHlslFunctionality1
+proc   :  shaderc_compile_options_set_hlsl_16bit_types -> compileOptionsSetHlsl16bitTypes
+proc   :  shaderc_compile_options_set_vulkan_rules_relaxed -> compileOptionsSetVulkanRulesRelaxed
+proc   :  shaderc_compile_options_set_invert_y -> compileOptionsSetInvertY
+proc   :  shaderc_compile_options_set_nan_clamp -> compileOptionsSetNanClamp
+typedef:  shaderc_compilation_result_t -> CompilationResultT
+proc   :  shaderc_compile_into_spv -> compileIntoSpv
+proc   :  shaderc_compile_into_spv_assembly -> compileIntoSpvAssembly
+proc   :  shaderc_compile_into_preprocessed_text -> compileIntoPreprocessedText
+proc   :  shaderc_assemble_into_spv -> assembleIntoSpv
+proc   :  shaderc_result_release -> resultRelease
+proc   :  shaderc_result_get_length -> resultGetLength
+proc   :  shaderc_result_get_num_warnings -> resultGetNumWarnings
+proc   :  shaderc_result_get_num_errors -> resultGetNumErrors
+proc   :  shaderc_result_get_compilation_status -> resultGetCompilationStatus
+proc   :  shaderc_result_get_bytes -> resultGetBytes
+proc   :  shaderc_result_get_error_message -> resultGetErrorMessage
+proc   :  shaderc_get_spv_version -> getSpvVersion
+proc   :  shaderc_parse_version_profile -> parseVersionProfile
+anon   :  struct_shaderc_compiler -> StructCompiler
+anon   :  struct_shaderc_compile_options -> StructCompileOptions
+typedef:  shaderc_target_env -> TargetEnv
+typedef:  shaderc_spirv_version -> SpirvVersion
+anon   :  struct_shaderc_compilation_result -> StructCompilationResult
+typedef:  shaderc_compilation_status -> CompilationStatus
+enum   :  enum_shaderc_target_env -> EnumTargetEnv
+enum   :  enum_shaderc_spirv_version -> EnumSpirvVersion
+enum   :  enum_shaderc_compilation_status -> EnumCompilationStatus
+enumval:  shaderc_source_language_glsl -> glsl
+enumval:  shaderc_source_language_hlsl -> hlsl
+enumval:  shaderc_vertex_shader -> vertexShader
+enumval:  shaderc_fragment_shader -> fragmentShader
+enumval:  shaderc_compute_shader -> computeShader
+enumval:  shaderc_geometry_shader -> geometryShader
+enumval:  shaderc_tess_control_shader -> tessControlShader
+enumval:  shaderc_tess_evaluation_shader -> tessEvaluationShader
+enumval:  shaderc_glsl_vertex_shader -> glslVertexShader
+enumval:  shaderc_glsl_fragment_shader -> glslFragmentShader
+enumval:  shaderc_glsl_compute_shader -> glslComputeShader
+enumval:  shaderc_glsl_geometry_shader -> glslGeometryShader
+enumval:  shaderc_glsl_tess_control_shader -> glslTessControlShader
+enumval:  shaderc_glsl_tess_evaluation_shader -> glslTessEvaluationShader
+enumval:  shaderc_glsl_infer_from_source -> glslInferFromSource
+enumval:  shaderc_glsl_default_vertex_shader -> glslDefaultVertexShader
+enumval:  shaderc_glsl_default_fragment_shader -> glslDefaultFragmentShader
+enumval:  shaderc_glsl_default_compute_shader -> glslDefaultComputeShader
+enumval:  shaderc_glsl_default_geometry_shader -> glslDefaultGeometryShader
+enumval:  shaderc_glsl_default_tess_control_shader -> glslDefaultTessControlShader
+enumval:  shaderc_glsl_default_tess_evaluation_shader -> glslDefaultTessEvaluationShader
+enumval:  shaderc_spirv_assembly -> spirvAssembly
+enumval:  shaderc_raygen_shader -> raygenShader
+enumval:  shaderc_anyhit_shader -> anyhitShader
+enumval:  shaderc_closesthit_shader -> closesthitShader
+enumval:  shaderc_miss_shader -> missShader
+enumval:  shaderc_intersection_shader -> intersectionShader
+enumval:  shaderc_callable_shader -> callableShader
+enumval:  shaderc_glsl_raygen_shader -> glslRaygenShader
+enumval:  shaderc_glsl_anyhit_shader -> glslAnyhitShader
+enumval:  shaderc_glsl_closesthit_shader -> glslClosesthitShader
+enumval:  shaderc_glsl_miss_shader -> glslMissShader
+enumval:  shaderc_glsl_intersection_shader -> glslIntersectionShader
+enumval:  shaderc_glsl_callable_shader -> glslCallableShader
+enumval:  shaderc_glsl_default_raygen_shader -> glslDefaultRaygenShader
+enumval:  shaderc_glsl_default_anyhit_shader -> glslDefaultAnyhitShader
+enumval:  shaderc_glsl_default_closesthit_shader -> glslDefaultClosesthitShader
+enumval:  shaderc_glsl_default_miss_shader -> glslDefaultMissShader
+enumval:  shaderc_glsl_default_intersection_shader -> glslDefaultIntersectionShader
+enumval:  shaderc_glsl_default_callable_shader -> glslDefaultCallableShader
+enumval:  shaderc_task_shader -> taskShader
+enumval:  shaderc_mesh_shader -> meshShader
+enumval:  shaderc_glsl_task_shader -> glslTaskShader
+enumval:  shaderc_glsl_mesh_shader -> glslMeshShader
+enumval:  shaderc_glsl_default_task_shader -> glslDefaultTaskShader
+enumval:  shaderc_glsl_default_mesh_shader -> glslDefaultMeshShader
+enumval:  shaderc_profile_none -> none
+enumval:  shaderc_profile_core -> core
+enumval:  shaderc_profile_compatibility -> compatibility
+enumval:  shaderc_profile_es -> es
+enumval:  shaderc_optimization_level_zero -> zero
+enumval:  shaderc_optimization_level_size -> size
+enumval:  shaderc_optimization_level_performance -> performance
+enumval:  shaderc_limit_max_lights -> maxLights
+enumval:  shaderc_limit_max_clip_planes -> maxClipPlanes
+enumval:  shaderc_limit_max_texture_units -> maxTextureUnits
+enumval:  shaderc_limit_max_texture_coords -> maxTextureCoords
+enumval:  shaderc_limit_max_vertex_attribs -> maxVertexAttribs
+enumval:  shaderc_limit_max_vertex_uniform_components -> maxVertexUniformComponents
+enumval:  shaderc_limit_max_varying_floats -> maxVaryingFloats
+enumval:  shaderc_limit_max_vertex_texture_image_units -> maxVertexTextureImageUnits
+enumval:  shaderc_limit_max_combined_texture_image_units -> maxCombinedTextureImageUnits
+enumval:  shaderc_limit_max_texture_image_units -> maxTextureImageUnits
+enumval:  shaderc_limit_max_fragment_uniform_components -> maxFragmentUniformComponents
+enumval:  shaderc_limit_max_draw_buffers -> maxDrawBuffers
+enumval:  shaderc_limit_max_vertex_uniform_vectors -> maxVertexUniformVectors
+enumval:  shaderc_limit_max_varying_vectors -> maxVaryingVectors
+enumval:  shaderc_limit_max_fragment_uniform_vectors -> maxFragmentUniformVectors
+enumval:  shaderc_limit_max_vertex_output_vectors -> maxVertexOutputVectors
+enumval:  shaderc_limit_max_fragment_input_vectors -> maxFragmentInputVectors
+enumval:  shaderc_limit_min_program_texel_offset -> minProgramTexelOffset
+enumval:  shaderc_limit_max_program_texel_offset -> maxProgramTexelOffset
+enumval:  shaderc_limit_max_clip_distances -> maxClipDistances
+enumval:  shaderc_limit_max_compute_work_group_count_x -> maxComputeWorkGroupCountX
+enumval:  shaderc_limit_max_compute_work_group_count_y -> maxComputeWorkGroupCountY
+enumval:  shaderc_limit_max_compute_work_group_count_z -> maxComputeWorkGroupCountZ
+enumval:  shaderc_limit_max_compute_work_group_size_x -> maxComputeWorkGroupSizeX
+enumval:  shaderc_limit_max_compute_work_group_size_y -> maxComputeWorkGroupSizeY
+enumval:  shaderc_limit_max_compute_work_group_size_z -> maxComputeWorkGroupSizeZ
+enumval:  shaderc_limit_max_compute_uniform_components -> maxComputeUniformComponents
+enumval:  shaderc_limit_max_compute_texture_image_units -> maxComputeTextureImageUnits
+enumval:  shaderc_limit_max_compute_image_uniforms -> maxComputeImageUniforms
+enumval:  shaderc_limit_max_compute_atomic_counters -> maxComputeAtomicCounters
+enumval:  shaderc_limit_max_compute_atomic_counter_buffers -> maxComputeAtomicCounterBuffers
+enumval:  shaderc_limit_max_varying_components -> maxVaryingComponents
+enumval:  shaderc_limit_max_vertex_output_components -> maxVertexOutputComponents
+enumval:  shaderc_limit_max_geometry_input_components -> maxGeometryInputComponents
+enumval:  shaderc_limit_max_geometry_output_components -> maxGeometryOutputComponents
+enumval:  shaderc_limit_max_fragment_input_components -> maxFragmentInputComponents
+enumval:  shaderc_limit_max_image_units -> maxImageUnits
+enumval:  shaderc_limit_max_combined_image_units_and_fragment_outputs -> maxCombinedImageUnitsAndFragmentOutputs
+enumval:  shaderc_limit_max_combined_shader_output_resources -> maxCombinedShaderOutputResources
+enumval:  shaderc_limit_max_image_samples -> maxImageSamples
+enumval:  shaderc_limit_max_vertex_image_uniforms -> maxVertexImageUniforms
+enumval:  shaderc_limit_max_tess_control_image_uniforms -> maxTessControlImageUniforms
+enumval:  shaderc_limit_max_tess_evaluation_image_uniforms -> maxTessEvaluationImageUniforms
+enumval:  shaderc_limit_max_geometry_image_uniforms -> maxGeometryImageUniforms
+enumval:  shaderc_limit_max_fragment_image_uniforms -> maxFragmentImageUniforms
+enumval:  shaderc_limit_max_combined_image_uniforms -> maxCombinedImageUniforms
+enumval:  shaderc_limit_max_geometry_texture_image_units -> maxGeometryTextureImageUnits
+enumval:  shaderc_limit_max_geometry_output_vertices -> maxGeometryOutputVertices
+enumval:  shaderc_limit_max_geometry_total_output_components -> maxGeometryTotalOutputComponents
+enumval:  shaderc_limit_max_geometry_uniform_components -> maxGeometryUniformComponents
+enumval:  shaderc_limit_max_geometry_varying_components -> maxGeometryVaryingComponents
+enumval:  shaderc_limit_max_tess_control_input_components -> maxTessControlInputComponents
+enumval:  shaderc_limit_max_tess_control_output_components -> maxTessControlOutputComponents
+enumval:  shaderc_limit_max_tess_control_texture_image_units -> maxTessControlTextureImageUnits
+enumval:  shaderc_limit_max_tess_control_uniform_components -> maxTessControlUniformComponents
+enumval:  shaderc_limit_max_tess_control_total_output_components -> maxTessControlTotalOutputComponents
+enumval:  shaderc_limit_max_tess_evaluation_input_components -> maxTessEvaluationInputComponents
+enumval:  shaderc_limit_max_tess_evaluation_output_components -> maxTessEvaluationOutputComponents
+enumval:  shaderc_limit_max_tess_evaluation_texture_image_units -> maxTessEvaluationTextureImageUnits
+enumval:  shaderc_limit_max_tess_evaluation_uniform_components -> maxTessEvaluationUniformComponents
+enumval:  shaderc_limit_max_tess_patch_components -> maxTessPatchComponents
+enumval:  shaderc_limit_max_patch_vertices -> maxPatchVertices
+enumval:  shaderc_limit_max_tess_gen_level -> maxTessGenLevel
+enumval:  shaderc_limit_max_viewports -> maxViewports
+enumval:  shaderc_limit_max_vertex_atomic_counters -> maxVertexAtomicCounters
+enumval:  shaderc_limit_max_tess_control_atomic_counters -> maxTessControlAtomicCounters
+enumval:  shaderc_limit_max_tess_evaluation_atomic_counters -> maxTessEvaluationAtomicCounters
+enumval:  shaderc_limit_max_geometry_atomic_counters -> maxGeometryAtomicCounters
+enumval:  shaderc_limit_max_fragment_atomic_counters -> maxFragmentAtomicCounters
+enumval:  shaderc_limit_max_combined_atomic_counters -> maxCombinedAtomicCounters
+enumval:  shaderc_limit_max_atomic_counter_bindings -> maxAtomicCounterBindings
+enumval:  shaderc_limit_max_vertex_atomic_counter_buffers -> maxVertexAtomicCounterBuffers
+enumval:  shaderc_limit_max_tess_control_atomic_counter_buffers -> maxTessControlAtomicCounterBuffers
+enumval:  shaderc_limit_max_tess_evaluation_atomic_counter_buffers -> maxTessEvaluationAtomicCounterBuffers
+enumval:  shaderc_limit_max_geometry_atomic_counter_buffers -> maxGeometryAtomicCounterBuffers
+enumval:  shaderc_limit_max_fragment_atomic_counter_buffers -> maxFragmentAtomicCounterBuffers
+enumval:  shaderc_limit_max_combined_atomic_counter_buffers -> maxCombinedAtomicCounterBuffers
+enumval:  shaderc_limit_max_atomic_counter_buffer_size -> maxAtomicCounterBufferSize
+enumval:  shaderc_limit_max_transform_feedback_buffers -> maxTransformFeedbackBuffers
+enumval:  shaderc_limit_max_transform_feedback_interleaved_components -> maxTransformFeedbackInterleavedComponents
+enumval:  shaderc_limit_max_cull_distances -> maxCullDistances
+enumval:  shaderc_limit_max_combined_clip_and_cull_distances -> maxCombinedClipAndCullDistances
+enumval:  shaderc_limit_max_samples -> maxSamples
+enumval:  shaderc_limit_max_mesh_output_vertices_nv -> maxMeshOutputVerticesNv
+enumval:  shaderc_limit_max_mesh_output_primitives_nv -> maxMeshOutputPrimitivesNv
+enumval:  shaderc_limit_max_mesh_work_group_size_x_nv -> maxMeshWorkGroupSizeXNv
+enumval:  shaderc_limit_max_mesh_work_group_size_y_nv -> maxMeshWorkGroupSizeYNv
+enumval:  shaderc_limit_max_mesh_work_group_size_z_nv -> maxMeshWorkGroupSizeZNv
+enumval:  shaderc_limit_max_task_work_group_size_x_nv -> maxTaskWorkGroupSizeXNv
+enumval:  shaderc_limit_max_task_work_group_size_y_nv -> maxTaskWorkGroupSizeYNv
+enumval:  shaderc_limit_max_task_work_group_size_z_nv -> maxTaskWorkGroupSizeZNv
+enumval:  shaderc_limit_max_mesh_view_count_nv -> maxMeshViewCountNv
+enumval:  shaderc_limit_max_mesh_output_vertices_ext -> maxMeshOutputVerticesExt
+enumval:  shaderc_limit_max_mesh_output_primitives_ext -> maxMeshOutputPrimitivesExt
+enumval:  shaderc_limit_max_mesh_work_group_size_x_ext -> maxMeshWorkGroupSizeXExt
+enumval:  shaderc_limit_max_mesh_work_group_size_y_ext -> maxMeshWorkGroupSizeYExt
+enumval:  shaderc_limit_max_mesh_work_group_size_z_ext -> maxMeshWorkGroupSizeZExt
+enumval:  shaderc_limit_max_task_work_group_size_x_ext -> maxTaskWorkGroupSizeXExt
+enumval:  shaderc_limit_max_task_work_group_size_y_ext -> maxTaskWorkGroupSizeYExt
+enumval:  shaderc_limit_max_task_work_group_size_z_ext -> maxTaskWorkGroupSizeZExt
+enumval:  shaderc_limit_max_mesh_view_count_ext -> maxMeshViewCountExt
+enumval:  shaderc_limit_max_dual_source_draw_buffers_ext -> maxDualSourceDrawBuffersExt
+enumval:  shaderc_uniform_kind_image -> image
+enumval:  shaderc_uniform_kind_sampler -> sampler
+enumval:  shaderc_uniform_kind_texture -> texture
+enumval:  shaderc_uniform_kind_buffer -> buffer
+enumval:  shaderc_uniform_kind_storage_buffer -> storageBuffer
+enumval:  shaderc_uniform_kind_unordered_access_view -> unorderedAccessView
+arg    :  a0 -> a0
+arg    :  options -> options
+arg    :  options -> options
+arg    :  options -> options
+arg    :  name -> name
+arg    :  name_length -> nameLength
+arg    :  value -> value
+arg    :  value_length -> valueLength
+arg    :  options -> options
+arg    :  lang -> lang
+arg    :  options -> options
+arg    :  options -> options
+arg    :  level -> level
+arg    :  options -> options
+arg    :  version -> version
+arg    :  profile -> profile
+field  :  source_name -> sourceName
+field  :  source_name_length -> sourceNameLength
+field  :  content -> content
+field  :  content_length -> contentLength
+field  :  user_data -> userData
+enumval:  shaderc_include_type_relative -> relative
+enumval:  shaderc_include_type_standard -> standard
+arg    :  a0 -> a0
+arg    :  a1 -> a1
+arg    :  a2 -> a2
+arg    :  a3 -> a3
+arg    :  a4 -> a4
+arg    :  a0 -> a0
+arg    :  a1 -> a1
+arg    :  options -> options
+arg    :  resolver -> resolver
+arg    :  result_releaser -> resultReleaser
+arg    :  user_data -> userData
+arg    :  options -> options
+arg    :  options -> options
+arg    :  target -> target
+arg    :  version -> version
+arg    :  options -> options
+arg    :  version -> version
+arg    :  options -> options
+arg    :  options -> options
+arg    :  limit -> limit
+arg    :  value -> value
+arg    :  options -> options
+arg    :  auto_bind -> autoBind
+arg    :  options -> options
+arg    :  upgrade -> upgrade
+arg    :  options -> options
+arg    :  hlsl_iomap -> hlslIomap
+arg    :  options -> options
+arg    :  hlsl_offsets -> hlslOffsets
+arg    :  options -> options
+arg    :  kind -> kind
+arg    :  base -> base
+arg    :  options -> options
+arg    :  shader_kind -> shaderKind
+arg    :  kind -> kind
+arg    :  base -> base
+arg    :  options -> options
+arg    :  preserve_bindings -> preserveBindings
+arg    :  options -> options
+arg    :  auto_map -> autoMap
+arg    :  options -> options
+arg    :  shader_kind -> shaderKind
+arg    :  reg -> reg
+arg    :  set -> set
+arg    :  binding -> binding
+arg    :  options -> options
+arg    :  reg -> reg
+arg    :  set -> set
+arg    :  binding -> binding
+arg    :  options -> options
+arg    :  enable -> enable
+arg    :  options -> options
+arg    :  enable -> enable
+arg    :  options -> options
+arg    :  enable -> enable
+arg    :  options -> options
+arg    :  enable -> enable
+arg    :  options -> options
+arg    :  enable -> enable
+arg    :  compiler -> compiler
+arg    :  source_text -> sourceText
+arg    :  source_text_size -> sourceTextSize
+arg    :  shader_kind -> shaderKind
+arg    :  input_file_name -> inputFileName
+arg    :  entry_point_name -> entryPointName
+arg    :  additional_options -> additionalOptions
+arg    :  compiler -> compiler
+arg    :  source_text -> sourceText
+arg    :  source_text_size -> sourceTextSize
+arg    :  shader_kind -> shaderKind
+arg    :  input_file_name -> inputFileName
+arg    :  entry_point_name -> entryPointName
+arg    :  additional_options -> additionalOptions
+arg    :  compiler -> compiler
+arg    :  source_text -> sourceText
+arg    :  source_text_size -> sourceTextSize
+arg    :  shader_kind -> shaderKind
+arg    :  input_file_name -> inputFileName
+arg    :  entry_point_name -> entryPointName
+arg    :  additional_options -> additionalOptions
+arg    :  compiler -> compiler
+arg    :  source_assembly -> sourceAssembly
+arg    :  source_assembly_size -> sourceAssemblySize
+arg    :  additional_options -> additionalOptions
+arg    :  result -> result
+arg    :  result -> result
+arg    :  result -> result
+arg    :  result -> result
+arg    :  a0 -> a0
+arg    :  result -> result
+arg    :  result -> result
+arg    :  version -> version
+arg    :  revision -> revision
+arg    :  str -> str
+arg    :  version -> version
+arg    :  profile -> profile
+enumval:  shaderc_target_env_vulkan -> vulkan
+enumval:  shaderc_target_env_opengl -> opengl
+enumval:  shaderc_target_env_opengl_compat -> openglCompat
+enumval:  shaderc_target_env_webgpu -> webgpu
+enumval:  shaderc_target_env_default -> default
+enumval:  shaderc_spirv_version_1_0 -> spirvVersion10
+enumval:  shaderc_spirv_version_1_1 -> spirvVersion11
+enumval:  shaderc_spirv_version_1_2 -> spirvVersion12
+enumval:  shaderc_spirv_version_1_3 -> spirvVersion13
+enumval:  shaderc_spirv_version_1_4 -> spirvVersion14
+enumval:  shaderc_spirv_version_1_5 -> spirvVersion15
+enumval:  shaderc_spirv_version_1_6 -> spirvVersion16
+enumval:  shaderc_compilation_status_success -> success
+enumval:  shaderc_compilation_status_invalid_stage -> invalidStage
+enumval:  shaderc_compilation_status_compilation_error -> compilationError
+enumval:  shaderc_compilation_status_internal_error -> internalError
+enumval:  shaderc_compilation_status_null_result_object -> nullResultObject
+enumval:  shaderc_compilation_status_invalid_assembly -> invalidAssembly
+enumval:  shaderc_compilation_status_validation_error -> validationError
+enumval:  shaderc_compilation_status_transformation_error -> transformationError
+enumval:  shaderc_compilation_status_configuration_error -> configurationError
