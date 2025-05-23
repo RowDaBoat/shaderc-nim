@@ -46,7 +46,7 @@ proc rename(name: string, kind: SymbolKind, path: string, overloading: var bool)
   return renamed
 
 importc:
-  outputPath srcDir/"shaderc"/"api.nim"
+  outputPath srcDir/"api.nim"
   path shadercDir
   renameCallback rename
   "libshaderc/include/shaderc/shaderc.h"
