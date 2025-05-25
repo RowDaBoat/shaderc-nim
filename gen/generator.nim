@@ -49,4 +49,6 @@ importc:
   outputPath srcDir/"api.nim"
   path shadercDir
   renameCallback rename
+  "libshaderc/include/shaderc/env.h"
   "libshaderc/include/shaderc/shaderc.h"
+  "libshaderc/include/shaderc/status.h"

@@ -1,3 +1,9 @@
+enum   :  enum_shaderc_target_env -> EnumTargetEnv
+typedef:  shaderc_target_env -> TargetEnv
+enum   :  enum_shaderc_env_version -> EnumEnvVersion
+typedef:  shaderc_env_version -> EnvVersion
+enum   :  enum_shaderc_spirv_version -> EnumSpirvVersion
+typedef:  shaderc_spirv_version -> SpirvVersion
 enum   :  enum_shaderc_source_language -> EnumSourceLanguage
 typedef:  shaderc_source_language -> SourceLanguage
 enum   :  enum_shaderc_shader_kind -> EnumShaderKind
@@ -64,13 +70,28 @@ proc   :  shaderc_get_spv_version -> getSpvVersion
 proc   :  shaderc_parse_version_profile -> parseVersionProfile
 anon   :  struct_shaderc_compiler -> StructCompiler
 anon   :  struct_shaderc_compile_options -> StructCompileOptions
-typedef:  shaderc_target_env -> TargetEnv
-typedef:  shaderc_spirv_version -> SpirvVersion
 anon   :  struct_shaderc_compilation_result -> StructCompilationResult
 typedef:  shaderc_compilation_status -> CompilationStatus
-enum   :  enum_shaderc_target_env -> EnumTargetEnv
-enum   :  enum_shaderc_spirv_version -> EnumSpirvVersion
 enum   :  enum_shaderc_compilation_status -> EnumCompilationStatus
+enumval:  shaderc_target_env_vulkan -> vulkan
+enumval:  shaderc_target_env_opengl -> opengl
+enumval:  shaderc_target_env_opengl_compat -> openglCompat
+enumval:  shaderc_target_env_webgpu -> webgpu
+enumval:  shaderc_target_env_default -> default
+enumval:  shaderc_env_version_vulkan_1_0 -> envVersionVulkan10
+enumval:  shaderc_env_version_vulkan_1_1 -> envVersionVulkan11
+enumval:  shaderc_env_version_vulkan_1_2 -> envVersionVulkan12
+enumval:  shaderc_env_version_vulkan_1_3 -> envVersionVulkan13
+enumval:  shaderc_env_version_vulkan_1_4 -> envVersionVulkan14
+enumval:  shaderc_env_version_opengl_4_5 -> envVersionOpengl45
+enumval:  shaderc_env_version_webgpu -> envVersionWebgpu
+enumval:  shaderc_spirv_version_1_0 -> spirvVersion10
+enumval:  shaderc_spirv_version_1_1 -> spirvVersion11
+enumval:  shaderc_spirv_version_1_2 -> spirvVersion12
+enumval:  shaderc_spirv_version_1_3 -> spirvVersion13
+enumval:  shaderc_spirv_version_1_4 -> spirvVersion14
+enumval:  shaderc_spirv_version_1_5 -> spirvVersion15
+enumval:  shaderc_spirv_version_1_6 -> spirvVersion16
 enumval:  shaderc_source_language_glsl -> glsl
 enumval:  shaderc_source_language_hlsl -> hlsl
 enumval:  shaderc_vertex_shader -> vertexShader
@@ -351,18 +372,6 @@ arg    :  revision -> revision
 arg    :  str -> str
 arg    :  version -> version
 arg    :  profile -> profile
-enumval:  shaderc_target_env_vulkan -> vulkan
-enumval:  shaderc_target_env_opengl -> opengl
-enumval:  shaderc_target_env_opengl_compat -> openglCompat
-enumval:  shaderc_target_env_webgpu -> webgpu
-enumval:  shaderc_target_env_default -> default
-enumval:  shaderc_spirv_version_1_0 -> spirvVersion10
-enumval:  shaderc_spirv_version_1_1 -> spirvVersion11
-enumval:  shaderc_spirv_version_1_2 -> spirvVersion12
-enumval:  shaderc_spirv_version_1_3 -> spirvVersion13
-enumval:  shaderc_spirv_version_1_4 -> spirvVersion14
-enumval:  shaderc_spirv_version_1_5 -> spirvVersion15
-enumval:  shaderc_spirv_version_1_6 -> spirvVersion16
 enumval:  shaderc_compilation_status_success -> success
 enumval:  shaderc_compilation_status_invalid_stage -> invalidStage
 enumval:  shaderc_compilation_status_compilation_error -> compilationError
