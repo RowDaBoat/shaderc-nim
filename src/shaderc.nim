@@ -1,2 +1,2 @@
-import shaderc/compile
-import shaderc/api ; export api
+import compile
+import api ; export api
