@@ -13,14 +13,12 @@ requires "futhark >= 0.15.0"
 
 # Tasks
 task generate, "Generate the bindings and shaderc static library":
-  exec "cd shaderc && ./utils/git-sync-deps"
-  exec "cd shaderc && cmake -DCMAKE_BUILD_TYPE=Release -DSHADERC_SKIP_TESTS=ON -DSHADERC_SKIP_EXAMPLES=ON -DSHADERC_SKIP_COPYRIGHT_CHECK=ON ."
-  exec "cd shaderc && cmake --build . --target shaderc_combined"
-  when defined(windows):
-    exec "cp shaderc/libshaderc/libshaderc_combined.a src/libshaderc_combined_win.a"
-  elif defined(macosx):
-    exec "cp shaderc/libshaderc/libshaderc_combined.a src/libshaderc_combined_mac.a"
-  elif defined(linux):
-    exec "cp shaderc/libshaderc/libshaderc_combined.a src/libshaderc_combined_linux.a"
   selfExec "c -r -d:futharkRebuild -d:opirRebuild gen/generator.nim"
   exec "rm gen/generator"
+
+before install:
+  withDir "shaderc": exec "git pull --recurse-submodules origin main"
+  withDir "shaderc": exec "./utils/git-sync-deps"
+  withDir "shaderc": exec "cmake -DCMAKE_BUILD_TYPE=Release -DSHADERC_SKIP_TESTS=ON -DSHADERC_SKIP_EXAMPLES=ON -DSHADERC_SKIP_COPYRIGHT_CHECK=ON ."
+  withDir "shaderc": exec "cmake --build . --target shaderc_combined"
+  cpFile "shaderc/libshaderc/libshaderc_combined.a", "src/libshaderc_combined.a"
