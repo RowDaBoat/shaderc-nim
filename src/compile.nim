@@ -1,2 +1,3 @@
+import os
 
-{.passL: "libshaderc_combined.a".}
+{.passL: currentSourcePath.parentDir/"libshaderc_combined.a".}
