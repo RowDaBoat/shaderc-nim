@@ -17,55 +17,55 @@ typedef:  shaderc_limit -> Limit
 enum   :  enum_shaderc_uniform_kind -> EnumUniformKind
 typedef:  shaderc_uniform_kind -> UniformKind
 typedef:  shaderc_compiler_t -> CompilerT
-proc   :  shaderc_compiler_initialize -> compilerInitialize
-proc   :  shaderc_compiler_release -> compilerRelease
+proc   :  shaderc_compiler_initialize -> initializeCompiler
+proc   :  shaderc_compiler_release -> release
 typedef:  shaderc_compile_options_t -> CompileOptionsT
-proc   :  shaderc_compile_options_initialize -> compileOptionsInitialize
-proc   :  shaderc_compile_options_clone -> compileOptionsClone
-proc   :  shaderc_compile_options_release -> compileOptionsRelease
-proc   :  shaderc_compile_options_add_macro_definition -> compileOptionsAddMacroDefinition
-proc   :  shaderc_compile_options_set_source_language -> compileOptionsSetSourceLanguage
-proc   :  shaderc_compile_options_set_generate_debug_info -> compileOptionsSetGenerateDebugInfo
-proc   :  shaderc_compile_options_set_optimization_level -> compileOptionsSetOptimizationLevel
-proc   :  shaderc_compile_options_set_forced_version_profile -> compileOptionsSetForcedVersionProfile
+proc   :  shaderc_compile_options_initialize -> initialize
+proc   :  shaderc_compile_options_clone -> clone
+proc   :  shaderc_compile_options_release -> release
+proc   :  shaderc_compile_options_add_macro_definition -> addMacroDefinition
+proc   :  shaderc_compile_options_set_source_language -> setSourceLanguage
+proc   :  shaderc_compile_options_set_generate_debug_info -> setGenerateDebugInfo
+proc   :  shaderc_compile_options_set_optimization_level -> setOptimizationLevel
+proc   :  shaderc_compile_options_set_forced_version_profile -> setForcedVersionProfile
 struct :  struct_shaderc_include_result -> StructIncludeResult
 typedef:  shaderc_include_result -> IncludeResult
 enum   :  enum_shaderc_include_type -> EnumIncludeType
 typedef:  shaderc_include_resolve_fn -> IncludeResolveFn
 typedef:  shaderc_include_result_release_fn -> IncludeResultReleaseFn
-proc   :  shaderc_compile_options_set_include_callbacks -> compileOptionsSetIncludeCallbacks
-proc   :  shaderc_compile_options_set_suppress_warnings -> compileOptionsSetSuppressWarnings
-proc   :  shaderc_compile_options_set_target_env -> compileOptionsSetTargetEnv
-proc   :  shaderc_compile_options_set_target_spirv -> compileOptionsSetTargetSpirv
-proc   :  shaderc_compile_options_set_warnings_as_errors -> compileOptionsSetWarningsAsErrors
-proc   :  shaderc_compile_options_set_limit -> compileOptionsSetLimit
-proc   :  shaderc_compile_options_set_auto_bind_uniforms -> compileOptionsSetAutoBindUniforms
-proc   :  shaderc_compile_options_set_auto_combined_image_sampler -> compileOptionsSetAutoCombinedImageSampler
-proc   :  shaderc_compile_options_set_hlsl_io_mapping -> compileOptionsSetHlslIoMapping
-proc   :  shaderc_compile_options_set_hlsl_offsets -> compileOptionsSetHlslOffsets
-proc   :  shaderc_compile_options_set_binding_base -> compileOptionsSetBindingBase
-proc   :  shaderc_compile_options_set_binding_base_for_stage -> compileOptionsSetBindingBaseForStage
-proc   :  shaderc_compile_options_set_preserve_bindings -> compileOptionsSetPreserveBindings
-proc   :  shaderc_compile_options_set_auto_map_locations -> compileOptionsSetAutoMapLocations
-proc   :  shaderc_compile_options_set_hlsl_register_set_and_binding_for_stage -> compileOptionsSetHlslRegisterSetAndBindingForStage
-proc   :  shaderc_compile_options_set_hlsl_register_set_and_binding -> compileOptionsSetHlslRegisterSetAndBinding
-proc   :  shaderc_compile_options_set_hlsl_functionality1 -> compileOptionsSetHlslFunctionality1
-proc   :  shaderc_compile_options_set_hlsl_16bit_types -> compileOptionsSetHlsl16bitTypes
-proc   :  shaderc_compile_options_set_vulkan_rules_relaxed -> compileOptionsSetVulkanRulesRelaxed
-proc   :  shaderc_compile_options_set_invert_y -> compileOptionsSetInvertY
-proc   :  shaderc_compile_options_set_nan_clamp -> compileOptionsSetNanClamp
+proc   :  shaderc_compile_options_set_include_callbacks -> setIncludeCallbacks
+proc   :  shaderc_compile_options_set_suppress_warnings -> setSuppressWarnings
+proc   :  shaderc_compile_options_set_target_env -> setTargetEnv
+proc   :  shaderc_compile_options_set_target_spirv -> setTargetSpirv
+proc   :  shaderc_compile_options_set_warnings_as_errors -> setWarningsAsErrors
+proc   :  shaderc_compile_options_set_limit -> setLimit
+proc   :  shaderc_compile_options_set_auto_bind_uniforms -> setAutoBindUniforms
+proc   :  shaderc_compile_options_set_auto_combined_image_sampler -> setAutoCombinedImageSampler
+proc   :  shaderc_compile_options_set_hlsl_io_mapping -> setHlslIoMapping
+proc   :  shaderc_compile_options_set_hlsl_offsets -> setHlslOffsets
+proc   :  shaderc_compile_options_set_binding_base -> setBindingBase
+proc   :  shaderc_compile_options_set_binding_base_for_stage -> setBindingBaseForStage
+proc   :  shaderc_compile_options_set_preserve_bindings -> setPreserveBindings
+proc   :  shaderc_compile_options_set_auto_map_locations -> setAutoMapLocations
+proc   :  shaderc_compile_options_set_hlsl_register_set_and_binding_for_stage -> setHlslRegisterSetAndBindingForStage
+proc   :  shaderc_compile_options_set_hlsl_register_set_and_binding -> setHlslRegisterSetAndBinding
+proc   :  shaderc_compile_options_set_hlsl_functionality1 -> setHlslFunctionality1
+proc   :  shaderc_compile_options_set_hlsl_16bit_types -> setHlsl16bitTypes
+proc   :  shaderc_compile_options_set_vulkan_rules_relaxed -> setVulkanRulesRelaxed
+proc   :  shaderc_compile_options_set_invert_y -> setInvertY
+proc   :  shaderc_compile_options_set_nan_clamp -> setNanClamp
 typedef:  shaderc_compilation_result_t -> CompilationResultT
 proc   :  shaderc_compile_into_spv -> compileIntoSpv
 proc   :  shaderc_compile_into_spv_assembly -> compileIntoSpvAssembly
 proc   :  shaderc_compile_into_preprocessed_text -> compileIntoPreprocessedText
 proc   :  shaderc_assemble_into_spv -> assembleIntoSpv
-proc   :  shaderc_result_release -> resultRelease
-proc   :  shaderc_result_get_length -> resultGetLength
-proc   :  shaderc_result_get_num_warnings -> resultGetNumWarnings
-proc   :  shaderc_result_get_num_errors -> resultGetNumErrors
-proc   :  shaderc_result_get_compilation_status -> resultGetCompilationStatus
-proc   :  shaderc_result_get_bytes -> resultGetBytes
-proc   :  shaderc_result_get_error_message -> resultGetErrorMessage
+proc   :  shaderc_result_release -> release
+proc   :  shaderc_result_get_length -> getLength
+proc   :  shaderc_result_get_num_warnings -> getNumWarnings
+proc   :  shaderc_result_get_num_errors -> getNumErrors
+proc   :  shaderc_result_get_compilation_status -> getCompilationStatus
+proc   :  shaderc_result_get_bytes -> getBytes
+proc   :  shaderc_result_get_error_message -> getErrorMessage
 proc   :  shaderc_get_spv_version -> getSpvVersion
 proc   :  shaderc_parse_version_profile -> parseVersionProfile
 anon   :  struct_shaderc_compiler -> StructCompiler
@@ -78,13 +78,13 @@ enumval:  shaderc_target_env_opengl -> opengl
 enumval:  shaderc_target_env_opengl_compat -> openglCompat
 enumval:  shaderc_target_env_webgpu -> webgpu
 enumval:  shaderc_target_env_default -> default
-enumval:  shaderc_env_version_vulkan_1_0 -> envVersionVulkan10
-enumval:  shaderc_env_version_vulkan_1_1 -> envVersionVulkan11
-enumval:  shaderc_env_version_vulkan_1_2 -> envVersionVulkan12
-enumval:  shaderc_env_version_vulkan_1_3 -> envVersionVulkan13
-enumval:  shaderc_env_version_vulkan_1_4 -> envVersionVulkan14
-enumval:  shaderc_env_version_opengl_4_5 -> envVersionOpengl45
-enumval:  shaderc_env_version_webgpu -> envVersionWebgpu
+enumval:  shaderc_env_version_vulkan_1_0 -> vulkan10
+enumval:  shaderc_env_version_vulkan_1_1 -> vulkan11
+enumval:  shaderc_env_version_vulkan_1_2 -> vulkan12
+enumval:  shaderc_env_version_vulkan_1_3 -> vulkan13
+enumval:  shaderc_env_version_vulkan_1_4 -> vulkan14
+enumval:  shaderc_env_version_opengl_4_5 -> opengl45
+enumval:  shaderc_env_version_webgpu -> webgpu
 enumval:  shaderc_spirv_version_1_0 -> spirvVersion10
 enumval:  shaderc_spirv_version_1_1 -> spirvVersion11
 enumval:  shaderc_spirv_version_1_2 -> spirvVersion12
