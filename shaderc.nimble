@@ -24,7 +24,7 @@ before install:
   withDir "shaderc": exec "git pull --recurse-submodules origin main"
   withDir "shaderc": exec python & " ./utils/git-sync-deps"
   withDir "shaderc": exec "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSHADERC_SKIP_TESTS=ON -DSHADERC_SKIP_EXAMPLES=ON -DSHADERC_SKIP_COPYRIGHT_CHECK=ON"
-  withDir "shaderc": exec "cmake --build build --target shaderc_combined --config Release -j"
+  withDir "shaderc": exec "cmake --build build --target shaderc_combined --config Release -j 1"
 
   when defined(windows):
     cpFile "shaderc/build/libshaderc/Release/shaderc_combined.lib", "src/shaderc_combined.lib"
