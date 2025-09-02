@@ -1,3 +1,16 @@
 # `shaderc` bindings for Nim
 
-Just clone this repo, run `nimble install`, and add `require "shaderc"` to your `.nimble` file.
+## Requirements
+### Linux
+- Python 3, and `python` must be version 3 or above.
+- c++ libs and headers, in Debian: `apt install libstdc++ libc++-dev libc++abi-dev libstdc++12-dev`
+ 
+### MacOS
+- XCode
+
+### Windows
+- Not implemented yet.
+
+## Installation
+Just add `requires "https://github.com/RowDaBoat/shaderc-nim.git"` to your `.nimble` file.
+
