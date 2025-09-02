@@ -1,4 +1,8 @@
 import os
 
 {.passL: currentSourcePath.parentDir/"libshaderc_combined.a".}
-{.passL: "-lc++".}
+
+when defined(macosx):
+  {.passL: "-lc++".}
+elif defined(unix):
+  {.passL: "-lstdc++".}
