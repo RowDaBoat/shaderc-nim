@@ -8,9 +8,12 @@
 ### MacOS
 - XCode
 
-### Windows
-- Not implemented yet.
+### Windows (MSVC toolchain)
+- [Python 3](https://www.python.org/)
+- [Windows SDK and MSVC](https://learn.microsoft.com/en-us/windows/apps/windows-sdk/)
+- [Make](https://gnuwin32.sourceforge.net/packages/make.htm)
+- [CMake](https://cmake.org/)
+- [Ninja](https://ninja-build.org/)
 
 ## Installation
 Just add `requires "https://github.com/RowDaBoat/shaderc-nim.git"` to your `.nimble` file.
-
