@@ -20,13 +20,18 @@ task generate, "Generate the bindings and shaderc static library":
     exec "rm -f gen/generator"
 
 before install:
-  let python = when defined(macosx): "python3" else: "python"
-  withDir "shaderc": exec "git pull --recurse-submodules origin main"
-  withDir "shaderc": exec python & " ./utils/git-sync-deps"
-  withDir "shaderc": exec "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSHADERC_SKIP_TESTS=ON -DSHADERC_SKIP_EXAMPLES=ON -DSHADERC_SKIP_COPYRIGHT_CHECK=ON"
-  withDir "shaderc": exec "cmake --build build --target shaderc_combined --config Release -j 1"
-
   when defined(windows):
-    cpFile "shaderc/build/libshaderc/Release/shaderc_combined.lib", "src/shaderc_combined.lib"
+    let libPath = "shaderc/build/libshaderc/Release/shaderc_combined.lib"
+    let destPath = "src/shaderc_combined.lib"
   else:
-    cpFile "shaderc/build/libshaderc/libshaderc_combined.a", "src/libshaderc_combined.a"
+    let libPath = "shaderc/build/libshaderc/libshaderc_combined.a"
+    let destPath = "src/libshaderc_combined.a"
+
+  if not fileExists(libPath):
+    let python = when defined(macosx): "python3" else: "python"
+    withDir "shaderc": exec "git pull --recurse-submodules origin main"
+    withDir "shaderc": exec python & " ./utils/git-sync-deps"
+    withDir "shaderc": exec "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSHADERC_SKIP_TESTS=ON -DSHADERC_SKIP_EXAMPLES=ON -DSHADERC_SKIP_COPYRIGHT_CHECK=ON"
+    withDir "shaderc": exec "cmake --build build --target shaderc_combined --config Release -j 1"
+
+  cpFile libPath, destPath
