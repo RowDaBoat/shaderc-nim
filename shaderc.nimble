@@ -1,3 +1,5 @@
+import std/strutils
+
 # Package
 version       = "0.0.1"
 author        = "RowDaBoat"
@@ -19,6 +21,15 @@ task generate, "Generate the bindings and shaderc static library":
   else:
     exec "rm -f gen/generator"
 
+# Helper procs
+proc coreCount(): string =
+  when defined(windows):
+    return gorge("cmd /c echo %NUMBER_OF_PROCESSORS%").strip()
+  elif defined(macosx):
+    return gorge("sysctl -n hw.logicalcpu").strip()
+  else:
+    return gorge("nproc").strip()
+
 before install:
   when defined(windows):
     let libPath = "shaderc/build/libshaderc/Release/shaderc_combined.lib"
@@ -32,6 +43,6 @@ before install:
     withDir "shaderc": exec "git pull --recurse-submodules origin main"
     withDir "shaderc": exec python & " ./utils/git-sync-deps"
     withDir "shaderc": exec "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSHADERC_SKIP_TESTS=ON -DSHADERC_SKIP_EXAMPLES=ON -DSHADERC_SKIP_COPYRIGHT_CHECK=ON"
-    withDir "shaderc": exec "cmake --build build --target shaderc_combined --config Release -j 1"
+    withDir "shaderc": exec "cmake --build build --target shaderc_combined --config Release -j " & coreCount()
 
   cpFile libPath, destPath
