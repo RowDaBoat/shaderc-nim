@@ -11,7 +11,7 @@ srcDir        = "src"
 
 # Dependencies
 requires "nim >= 2.0.0"
-requires "futhark >= 0.15.0"
+requires "https://github.com/PMunch/futhark.git#97550f5"
 
 # Tasks
 task generate, "Generate the bindings and shaderc static library":
