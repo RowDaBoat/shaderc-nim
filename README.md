@@ -16,4 +16,4 @@
 - [Ninja](https://ninja-build.org/)
 
 ## Installation
-Just add `requires "https://github.com/RowDaBoat/shaderc-nim.git"` to your `.nimble` file.
+Just add `requires "https://github.com/RowDaBoat/shadercnim.git"` to your `.nimble` file.
