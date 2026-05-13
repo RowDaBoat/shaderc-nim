@@ -8,7 +8,7 @@ import tables
 proc snakeToCamel(str: string, capitalizeFirst: bool): string =
   result = ""
   var capitalizeNext = capitalizeFirst
-  
+
   for c in str:
     if c == '_':
       capitalizeNext = true
